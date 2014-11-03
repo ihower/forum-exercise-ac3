@@ -9,4 +9,10 @@ class Topic < ActiveRecord::Base
 
   validates_presence_of :title
 
+  def authors
+    arr = [self.user]
+    arr = arr +  self.comments.map{ |c| c.user }
+    arr
+  end
+
 end

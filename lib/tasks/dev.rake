@@ -2,7 +2,7 @@ namespace :dev do
 
   task :fake => :environment do
 
-    1.upto(10).each do
+    1.upto(5).each do
       User.create!( :email => Faker::Internet.email, :password => "12345678" )
     end
 
@@ -13,7 +13,7 @@ namespace :dev do
 
       t = Topic.create!( :title => Faker::Lorem.sentence, :content => Faker::Lorem.paragraph, :user => users.sample )
 
-      0.upto( rand(20) ).each do
+      0.upto( rand(10) ).each do
         t.comments.create!( :content => Faker::Lorem.paragraph, :user => users.sample )
       end
 
