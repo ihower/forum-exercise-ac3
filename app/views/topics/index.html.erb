@@ -6,6 +6,11 @@
 <%= sort_link(@q, :created_at, 'Created At', default_order: :desc) %> |
 <%= sort_link(@q, :comments_count, 'Comments', default_order: :desc) %>
 
+<% Category.all.each do |c| %>
+  <%= link_to c.name, topics_path( :cid => c.id ) %>
+<% end %>
+<%= link_to "All", topics_path %>
+
 <table>
   <tr>
     <th>Topic</th>
