@@ -11,4 +11,13 @@ class User < ActiveRecord::Base
     self.username
   end
 
+  def set_admin!
+    self.role = "admin"
+    self.save!
+  end
+
+  def admin?
+    self.role == "admin"
+  end
+
 end
