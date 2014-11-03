@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'devise'
 gem 'kaminari'
+gem 'ransack'
 
 gem 'faker'
 
