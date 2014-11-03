@@ -12,7 +12,7 @@ class Topic < ActiveRecord::Base
   def authors
     arr = [self.user]
     arr = arr +  self.comments.map{ |c| c.user }
-    arr
+    arr.compact
   end
 
 end

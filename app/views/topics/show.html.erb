@@ -1,0 +1,25 @@
+<h2><%= @topic.title %></h2>
+
+<p><%= @topic.content %></p>
+
+<p><%= @topic.user.try(:display_name) %></p>
+
+<h2>Comments</h2>
+
+<% @topic.comments.each do |comment| %>
+
+  <p><%= comment.content %> by <%= comment.user.try(:display_name) %> </p>
+
+<% end %>
+
+
+<h2>New comment</h2>
+
+<%= form_for Comment.new, :url => topic_comments_path(@topic) do |f| %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+
+  <%= f.submit "Reply" %>
+
+<% end %>
