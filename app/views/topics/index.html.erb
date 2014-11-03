@@ -1,8 +1,5 @@
 <h2>Topic List</h2>
 
-<%= link_to "New Topic", new_topic_path %>
-<%= link_to "About", about_path %>
-
 <%= sort_link(@q, :created_at, 'Created At', default_order: :desc) %> |
 <%= sort_link(@q, :comments_count, 'Comments', default_order: :desc) %>
 

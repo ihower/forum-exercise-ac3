@@ -3,7 +3,7 @@ namespace :dev do
   task :fake => :environment do
 
     1.upto(5).each do
-      User.create!( :email => Faker::Internet.email, :password => "12345678" )
+      User.create!( :username => Faker::Name.name, :email => Faker::Internet.email, :password => "12345678" )
     end
 
     categories = Category.all
