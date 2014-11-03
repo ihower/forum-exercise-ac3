@@ -4,10 +4,13 @@ class CreateComments < ActiveRecord::Migration
 
       t.text :content
       t.integer :topic_id
+      t.integer :user_id
+
       t.timestamps
     end
 
     add_index :comments, :topic_id
+    add_index :comments, :user_id
   end
 
 end
