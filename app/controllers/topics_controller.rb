@@ -23,7 +23,9 @@ class TopicsController < ApplicationController
     else
       render :action => :new
     end
+  end
 
+  def about
   end
 
   protected
