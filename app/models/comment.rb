@@ -5,4 +5,8 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :content
 
+  def title
+    self.topic.title
+  end
+
 end

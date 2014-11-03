@@ -1,0 +1,16 @@
+<h2><%= @user.username %></h2>
+
+<h2>Topics</h2>
+
+<ul>
+<% @user.topics.each do |t| %>
+  <li><%= link_to t.title, topic_path(t) %></li>
+<% end %>
+</ul>
+
+<h2>Comments</h2>
+
+<% @user.comments.each do |c| %>
+  <li><%= link_to truncate(c.content), topic_path(c.topic) %></li>
+<% end %>
+</ul>
